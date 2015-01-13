@@ -8,7 +8,7 @@ import com.ardublock.translator.block.exception.SubroutineNotDeclaredException;
 
 abstract public class TranslatorBlock
 {
-	abstract public String toCode() throws SocketNullException, SubroutineNotDeclaredException, BlockException;
+	abstract public String toCode() throws SocketNullException, SubroutineNotDeclaredException;
 	
 	protected Long blockId;
 	
