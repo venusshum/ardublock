@@ -102,6 +102,11 @@ abstract public class TranslatorBlock
 		return this.comment;
 	}
 	
+	public String getLabel()
+	{
+		return label;
+	}
+	
 	public void onTranslateBodyFinished() throws SocketNullException, SubroutineNotDeclaredException{}
 	
 }

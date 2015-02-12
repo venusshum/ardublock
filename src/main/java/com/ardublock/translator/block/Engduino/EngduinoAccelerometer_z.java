@@ -5,9 +5,9 @@ import com.ardublock.translator.block.TranslatorBlock;
 import com.ardublock.translator.block.exception.SocketNullException;
 import com.ardublock.translator.block.exception.SubroutineNotDeclaredException;
 
-public class EngduinoAccelerometer_x extends TranslatorBlock {
+public class EngduinoAccelerometer_z extends TranslatorBlock {
 
-	public EngduinoAccelerometer_x (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
+	public EngduinoAccelerometer_z (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
 	}
@@ -22,9 +22,9 @@ public class EngduinoAccelerometer_x extends TranslatorBlock {
 			translator.addHeaderFile("Wire.h");
 			translator.addSetupCommand("EngduinoAccelerometer"+".begin();\n");
 			
-			ret += "\tfloat tem_accx[3];\n";
-			ret += "\tEngduinoAccelerometer.xyz(tem_accx);\n";
-			ret += "\t"+accx.toCode() + "=tem_accx[0];\n";
+			ret += "\tfloat tem_accz[3];\n";
+			ret += "\tEngduinoAccelerometer.xyz(tem_accz);\n";
+			ret += "\t"+accx.toCode() + "=tem_accz[2];\n";
 			return ret;
 		}
 }
