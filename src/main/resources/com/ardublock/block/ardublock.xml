@@ -8647,7 +8647,13 @@
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-		
+		<BlockGenus name="ED_IR" kind="data" color="0 255 255" initlabel="bg.ED_IR">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
 		<!-- 
 		<BlockGenus name="ED_acc_variable" kind="data" color="0 255 255" initlabel="bg.ED_acc_variable">
 			<BlockConnectors>
@@ -8931,14 +8937,14 @@
 		<BlockGenus name="EngduinoIR_send" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_send">
 		    <BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="socket" label="message">
-				<DefaultArg genus-name="ED_blue" label="Message or Data" />
+				<DefaultArg genus-name="ED_IR" label="Hello World" />
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
 		<BlockGenus name="EngduinoIR_recv" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_recv">
 		    <BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="socket" label="name">
-				<DefaultArg genus-name="ED_blue" label="IRbuf" />
+				<BlockConnector connector-type="string" connector-kind="socket" label="name">
+				<DefaultArg genus-name="ED_IR" label="IR_revBuf" />
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>

@@ -22,7 +22,7 @@ public class EngduinoSD_openFile_result extends TranslatorBlock{
 		
 		translator.addHeaderFile("EngduinoSD.h");
 		translator.addHeaderFile("EngduinoLEDs.h");
-		translator.addSetupCommand("EngduinoLEDs.begin()");
+		translator.addSetupCommand("EngduinoLEDs.begin();");
 		//translator.addSetupCommand("EngduinoSD"+".begin(" + filename.toCode() + "," + readwrite.toCode()+ ");\n");
 		
 		ret += "if(!(char)EngduinoSD" + ".begin(" + filename.toCode() + "," + readwrite.toCode()+ "))";

@@ -286,7 +286,7 @@ public class Translator
 	{
 		variableCnt = variableCnt + 1;
 		//String varName = variablePrefix + variableCnt + "_";
-		String varName = "_";
+		String varName = "_";	//vshum
 		int i;
 		for (i=0; i<reference.length(); ++i)
 		{

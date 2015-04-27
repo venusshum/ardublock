@@ -21,7 +21,7 @@ public class EngduinoIR_recv extends TranslatorBlock{
 		
 		translator.addHeaderFile("EngduinoIR.h");
 		translator.addDefinitionCommand("uint8_t "+ bufname.toCode() + "[IRBUFSZ];");
-
+		translator.addSetupCommand("EngduinoIR"+".begin();\n");
 		
 		String ret = "";
 		ret = "EngduinoIR.recv("+ bufname.toCode() + ", 1000);";
