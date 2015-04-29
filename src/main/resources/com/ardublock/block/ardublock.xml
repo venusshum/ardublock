@@ -8937,7 +8937,7 @@
 		<BlockGenus name="EngduinoIR_send" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_send">
 		    <BlockConnectors>
 				<BlockConnector connector-type="string" connector-kind="socket" label="message">
-				<DefaultArg genus-name="ED_IR" label="Hello World" />
+				<DefaultArg genus-name="ED_IR" label="IR_txBuf" />
 				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>

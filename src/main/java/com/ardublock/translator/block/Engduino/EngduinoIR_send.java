@@ -22,7 +22,8 @@ public class EngduinoIR_send extends TranslatorBlock
 		//TranslatorBlock message = this.getTranslatorBlockAtSocket(0);
 		
 		translator.addHeaderFile("EngduinoIR.h");
-
+		
+		
 		translator.addSetupCommand("EngduinoIR"+".begin();\n");
 		
 		//TranslatorBlock translatorBlock = this.getTranslatorBlockAtSocket(0, "Serial.print(", ");\n");
@@ -33,6 +34,7 @@ public class EngduinoIR_send extends TranslatorBlock
 		//}
 		String ret = "";
 		TranslatorBlock message = this.getTranslatorBlockAtSocket(0);
+		translator.addDefinitionCommand("char* "+ message.toCode() + "=\"\";");
 		//String msg = message.toCode();
 		//ret = "char *msg = \"" + message.toCode() + "\";\n";  
 		//ret += "EngduinoIR.send(msg, strlen(msg)+1);";
