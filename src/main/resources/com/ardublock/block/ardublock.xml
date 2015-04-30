@@ -9303,9 +9303,11 @@
 
 	<BlockDrawerSets>
 		<BlockDrawerSet name="factory" type="stack" location="southwest" window-per-drawer="no" drawer-draggable="no">
-			<BlockDrawer name="bd.control" type="factory" is-open="yes" button-color="255 255 0">
+			<BlockDrawer name="bd.arduino" type="factory" is-open="yes" button-color="255 255 0">
 				<BlockGenusMember>loop</BlockGenusMember>
 				<BlockGenusMember>program</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer name="bd.control" type="factory" is-open="yes" button-color="255 255 0">	
 				<BlockGenusMember>delay</BlockGenusMember>
 				<BlockGenusMember>delay_microseconds</BlockGenusMember>
 				<BlockGenusMember>millis</BlockGenusMember>
@@ -9750,30 +9752,41 @@
 			    <BlockGenusMember>little_bits_synthspeaker</BlockGenusMember>
 			</BlockDrawer -->
 			<!-- engduino -->
-			<BlockDrawer button-color="13 219 30" name="bd.Engduino">
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino">
 			    <BlockGenusMember>EngduinoLEDs_setLED</BlockGenusMember>
 			    <BlockGenusMember>EngduinoLEDs_setLED_brightness</BlockGenusMember>
 			    <BlockGenusMember>EngduinoLEDs_setLED_RGB</BlockGenusMember>
 			    <BlockGenusMember>EngduinoLEDs_setAll</BlockGenusMember>
 			    <BlockGenusMember>EngduinoLEDs_setAll_brightness</BlockGenusMember>
 			    <BlockGenusMember>EngduinoLEDs_setAll_RGB</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Sensors">
 			    <BlockGenusMember>EngduinoLight_lightlevel</BlockGenusMember>
 			    <BlockGenusMember>EngduinoTemp_temperature</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Button">
 			    <BlockGenusMember>EngduinoButton_isPressed</BlockGenusMember>
 			    <BlockGenusMember>EngduinoButton_wasPressed</BlockGenusMember>
 			    <BlockGenusMember>EngduinoButton_wasReleased</BlockGenusMember>
 			    <BlockGenusMember>EngduinoButton_waitUntilPressed</BlockGenusMember>
 			    <BlockGenusMember>EngduinoButton_waitUntilReleased</BlockGenusMember>
+			    
+			</BlockDrawer>
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Acc">
 			    <BlockGenusMember>ED_createAccVector</BlockGenusMember>
 			    <BlockGenusMember>EngduinoAccelerometer_xyz</BlockGenusMember>
 			    <BlockGenusMember>EngduinoAccelerometer_x</BlockGenusMember>
 			    <BlockGenusMember>EngduinoAccelerometer_y</BlockGenusMember>
 			    <BlockGenusMember>EngduinoAccelerometer_z</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Mag">
 			    <BlockGenusMember>ED_createMagVector</BlockGenusMember>
 			    <BlockGenusMember>EngduinoMagnetometer_xyz</BlockGenusMember>
 			    <BlockGenusMember>EngduinoMagnetometer_x</BlockGenusMember>
 			    <BlockGenusMember>EngduinoMagnetometer_y</BlockGenusMember>
 			    <BlockGenusMember>EngduinoMagnetometer_z</BlockGenusMember>
+			</BlockDrawer>
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino_SD">
 			    <BlockGenusMember>EngduinoSD_openFile</BlockGenusMember>
 			    <BlockGenusMember>EngduinoSD_openFile_result</BlockGenusMember>
 			    <BlockGenusMember>EngduinoSD_writeln_filename</BlockGenusMember>
@@ -9781,6 +9794,8 @@
 			    <BlockGenusMember>EngduinoSD_available</BlockGenusMember>
 			    <BlockGenusMember>EngduinoSD_read</BlockGenusMember>
 			    <BlockGenusMember>EngduinoSD_isAttached</BlockGenusMember>
+			 </BlockDrawer>
+			<BlockDrawer button-color="128 182 6" name="bd.Engduino_IR">
 			    <BlockGenusMember>EngduinoIR_send</BlockGenusMember>
 			    <BlockGenusMember>EngduinoIR_recv</BlockGenusMember>
 			</BlockDrawer>
