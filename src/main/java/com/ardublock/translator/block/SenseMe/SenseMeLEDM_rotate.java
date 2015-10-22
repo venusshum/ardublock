@@ -1,13 +1,13 @@
-package com.ardublock.translator.block.Engduino;
+package com.ardublock.translator.block.SenseMe;
 
 import com.ardublock.translator.Translator;
 import com.ardublock.translator.block.TranslatorBlock;
 import com.ardublock.translator.block.exception.SocketNullException;
 import com.ardublock.translator.block.exception.SubroutineNotDeclaredException;
 
-public class EngduinoAccelerometer_x extends TranslatorBlock {
+public class SenseMeLEDM_rotate extends TranslatorBlock {
 
-	public EngduinoAccelerometer_x (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
+	public SenseMeLEDM_rotate (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
 	}
@@ -17,11 +17,16 @@ public class EngduinoAccelerometer_x extends TranslatorBlock {
 		{
 			String ret="";
 			
-			translator.addHeaderFile("EngduinoAccelerometer.h");
+			translator.addHeaderFile("SenseMeLEDMatrix.h");
 			translator.addHeaderFile("Wire.h");
-			translator.addSetupCommand("EngduinoAccelerometer"+".begin();\n");
+			translator.addSetupCommand("SenseMeLEDMatrix"+".begin();\n");
 			
-			ret += "\tEngduinoAccelerometer.getX();\n";
+			
+			TranslatorBlock va = this.getTranslatorBlockAtSocket(0);
+			
+			String r = va.toCode();
+			
+			ret += "\tSenseMeLEDMatrix.setRotation(" + r + ");";
 			return ret;
 		}
 }

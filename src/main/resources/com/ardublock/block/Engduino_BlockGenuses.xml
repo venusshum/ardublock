@@ -1,0 +1,412 @@
+		<!-- UCL Engduino -->
+		<BlockGenus name="ED_blue" kind="data" color="0 0 255" initlabel="bg.ED_blue">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="ED_white" kind="data" color="255 255 255" initlabel="bg.ED_white">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="ED_red" kind="data" color="255 0 0" initlabel="bg.ED_red">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_green" kind="data" color="0 255 0" initlabel="bg.ED_green">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_yellow" kind="data" color="125 255 255" initlabel="bg.ED_yellow">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_magenta" kind="data" color="255 0 255" initlabel="bg.ED_magenta">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_cyan" kind="data" color="0 255 255" initlabel="bg.ED_purple">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_off" kind="data" color="120 120 120" initlabel="bg.ED_off">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_temp_celsius" kind="data" color="0 255 255" initlabel="bg.ED_temp_celsius">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_temp_kelvin" kind="data" color="0 255 255" initlabel="bg.ED_temp_kelvin">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_temp_fahrenheit" kind="data" color="0 255 255" initlabel="bg.ED_temp_fahrenheit">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_createAccVector" kind="command" color="20 200 200" initlabel="bg.ED_createAccVector">
+			<description>
+				<text>create an array of 3</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc_array">
+					<DefaultArg genus-name="variable_fake" label="AccData" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.vecsize" editable-label="no">
+					<DefaultArg genus-name="number" label="3" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_createMagVector" kind="command" color="200 20 200" initlabel="bg.ED_createMagVector">
+			<description>
+				<text>create an array of 3</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc_array">
+					<DefaultArg genus-name="variable_fake" label="MagData" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.vecsize" editable-label="no">
+					<DefaultArg genus-name="number" label="3" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_SD_READ" kind="data" color="200 100 0" initlabel="bg.ED_SD_READ">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_SD_WRITE" kind="data" color="255 100 200" initlabel="bg.ED_SD_WRITE">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_filename" kind="data" color="255 100 200" initlabel="bg.ED_filename">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_IR" kind="data" color="0 255 255" initlabel="bg.ED_IR">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<!-- 
+		<BlockGenus name="ED_acc_variable" kind="data" color="0 255 255" initlabel="bg.ED_acc_variable">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		-->
+		<BlockGenus name="EngduinoLEDs_setAll" kind="command" color="100 200 125" initlabel="bg.EngduinoLEDs_setAll">
+		    <description>
+				<text>Set all LEDs</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color">
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setAll_brightness" kind="command" color="100 200 125" initlabel="bg.EngduinoLEDs_setAll_brightness">
+		    <description>
+				<text>Set all LEDs brightness</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color">
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.brightness" >
+					<DefaultArg genus-name="number" label="15"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setAll_RGB" kind="command" color="100 200 125" initlabel="bg.EngduinoLEDs_setAll_RGB">
+		    <description>
+				<text>Set all LEDs RGB</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.R" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.G" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.B" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setLED" kind="command" color="255 10 10" initlabel="bg.EngduinoLEDs_setLED">
+			<description>
+				<text>Set LED</text>
+			</description>
+		    <BlockConnectors>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.LEDnum">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color" >
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setLED_brightness" kind="command" color="255 10 10" initlabel="bg.EngduinoLEDs_setLED_brightness">
+			<description>
+				<text>Set LED</text>
+			</description>
+		    <BlockConnectors>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.LEDnum">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color" >
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.brightness" >
+					<DefaultArg genus-name="number" label="15"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setLED_RGB" kind="command" color="255 10 10" initlabel="bg.EngduinoLEDs_setLED_RGB">
+			<description>
+				<text>Set LED</text>
+			</description>
+		    <BlockConnectors>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.LEDnum">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.R">
+					<DefaultArg genus-name="number" label="255" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.G" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.B" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>		
+		<BlockGenus name="EngduinoLight_lightlevel" kind="number_long" color="10 10 10" initlabel="bg.EngduinoLight_lightlevel">
+		    <description>
+				<text>Get light sensor level</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+			
+		</BlockGenus>
+		<BlockGenus name="EngduinoTemp_temperature" kind="number_double" color="200 10 255" initlabel="bg.EngduinoTemp_temperature">
+		    <description>
+				<text>Get Temperature</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.unit">
+					<DefaultArg genus-name="ED_temp_celsius" label="CELSIUS"/>
+				</BlockConnector>/
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_isPressed" kind="data" color="200 200 0" initlabel="bg.EngduinoButton_isPressed">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_wasPressed" kind="data" color="200 200 0" initlabel="bg.EngduinoButton_wasPressed">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_wasReleased" kind="data" color="200 200 0" initlabel="bg.EngduinoButton_wasReleased">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_waitUntilPressed" kind="command" color="200 200 0" initlabel="bg.EngduinoButton_wasPressed">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="EngduinoButton_waitUntilReleased" kind="command" color="200 200 0" initlabel="bg.EngduinoButton_WaitUntilReleased">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_waitUntilReleased" kind="command" color="200 200 0" initlabel="bg.EngduinoButton_WaitUntilReleased">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_xyz" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_xyz">
+			<description>
+				<text>Get Accelerometer 3-axis data</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc"> 
+				    <!--  
+				    <DefaultArg genus-name="ED_createAccVector"/>
+				    -->
+				 </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_x" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_x">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Acc_X" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_y" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_y">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Acc_Y" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_z" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_z">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Acc_Z" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoMagnetometer_xyz" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_xyz">
+			<description>
+				<text>Get Magetometer 3-axis data</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc"> 
+				    <!--  
+				    <DefaultArg genus-name="ED_createAccVector"/>
+				    -->
+				 </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoMagnetometer_x" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_x">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Mag_X" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoMagnetometer_y" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_y">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Mag_Y" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoMagnetometer_z" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_z">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Mag_Z" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		
+		<BlockGenus name="EngduinoSD_openFile" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_openFile">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="bc.filename">
+			    	<DefaultArg genus-name="ED_filename" label="logData.txt" />	
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="access">
+			    	<DefaultArg genus-name="ED_SD_READ" label="FILE_WRITE" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoSD_openFile_result" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_openfile_result">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="bc.filename">
+			    	<DefaultArg genus-name="ED_filename" label="logData.txt" />	
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="access">
+			    	<DefaultArg genus-name="ED_SD_READ" label="FILE_WRITE" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoSD_writeln_filename" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_writeln_filename">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="bc.filename">
+			    	<DefaultArg genus-name="ED_filename" label="logData.txt" />	
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="message">
+			    	<DefaultArg genus-name="ED_blue" label="Message or Data" />	
+			    </BlockConnector>
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
+					<DefaultArg genus-name="true" label="TRUE" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoSD_writeln" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_writeln">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="message">
+			    	<DefaultArg genus-name="ED_blue" label="Message or Data" />	
+			    </BlockConnector>
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
+					<DefaultArg genus-name="true" label="TRUE" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="EngduinoSD_available" kind="data" color="255 155 15" initlabel="bg.EngduinoSD_available">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoSD_read" kind="data" color="255 155 15" initlabel="bg.EngduinoSD_read">
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="EngduinoSD_isAttached" kind="data" color="255 155 15" initlabel="bg.EngduinoSD_isAttached">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoIR_send" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_send">
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="message">
+				<DefaultArg genus-name="ED_IR" label="Hello" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoIR_recv" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_recv">
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="name">
+				<DefaultArg genus-name="ED_IR" label="IR_revBuf" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>

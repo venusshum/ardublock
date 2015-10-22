@@ -32,13 +32,13 @@ public class EngduinoIR_send extends TranslatorBlock
 		//if (translatorBlock != null) {
 		//	ret = translatorBlock.toCode();
 		//}
+		//translator.addDefinitionCommand("char* "+ message.toCode() + "=\"\";");
 		String ret = "";
 		TranslatorBlock message = this.getTranslatorBlockAtSocket(0);
-		translator.addDefinitionCommand("char* "+ message.toCode() + "=\"\";");
-		//String msg = message.toCode();
-		//ret = "char *msg = \"" + message.toCode() + "\";\n";  
-		//ret += "EngduinoIR.send(msg, strlen(msg)+1);";
-		ret = "EngduinoIR.send(" + message.toCode() + ", strlen(msg)+1);\n";  
+		String msg = message.toCode();
+		ret = "char *msg = \"" + message.toCode() + "\";\n";  
+		ret += "EngduinoIR.send(msg, strlen(msg)+1);";
+		//ret = "EngduinoIR.send(" + message.toCode() + ", strlen(msg)+1);\n";  
 		return ret;
 	}
 		

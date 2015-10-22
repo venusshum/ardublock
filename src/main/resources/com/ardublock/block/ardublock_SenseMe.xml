@@ -2,9 +2,6 @@
 <!DOCTYPE BlockLangDef SYSTEM "lang_def.dtd">
 <!-- This describes every BlockGenus, BlockDrawer, BlockFamilies in Starlogo-TNG. Note: For BlockGenus, if genus A relies on another genus B, that genus B must be specified in the xml 
 	file before genus A is specified./ We impose this requirement so that sanity checks can be made regarding the validity of a default argument when the BlockGenuses are first loaded. -->
-
-
-
 <BlockLangDef>
 
 	<BlockConnectorShapes>
@@ -26,7 +23,6 @@
 		<BlockConnectorShape shape-type="cmd2" shape-number="16" />
 		<BlockConnectorShape shape-type="cmd3" shape-number="17" />
 	</BlockConnectorShapes>
-	
 	<BlockGenuses>
 		<BlockGenus name="dummy" kind="command" initlabel="" color="0 0 0" />
 	    <!-- ******************** NEW FOR LOOP **************** -->
@@ -66,6 +62,14 @@
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="cmd" connector-kind="socket" label="bc.do" />
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="header" kind="command" color="255 240 0" initlabel="bg.header" is-starter="yes" is-terminator="yes" label-unique="yes">
+			<description>
+				<text>this is the header of the arduino</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="cmd" connector-kind="socket"/>
 			</BlockConnectors>
 		</BlockGenus>
 		<!-- legacy support -->
@@ -8537,11 +8541,751 @@
 			</BlockConnectors>
 		</BlockGenus>
 		
+		
+		<!-- UCL Engduino -->
+		<BlockGenus name="ED_blue" kind="data" color="0 0 255" initlabel="bg.ED_blue">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
 
+		<BlockGenus name="ED_white" kind="data" color="255 255 255" initlabel="bg.ED_white">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="ED_red" kind="data" color="255 0 0" initlabel="bg.ED_red">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_green" kind="data" color="0 255 0" initlabel="bg.ED_green">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_yellow" kind="data" color="125 255 255" initlabel="bg.ED_yellow">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_magenta" kind="data" color="255 0 255" initlabel="bg.ED_magenta">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_cyan" kind="data" color="0 255 255" initlabel="bg.ED_purple">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_off" kind="data" color="120 120 120" initlabel="bg.ED_off">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_temp_celsius" kind="data" color="0 255 255" initlabel="bg.ED_temp_celsius">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_temp_kelvin" kind="data" color="0 255 255" initlabel="bg.ED_temp_kelvin">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_temp_fahrenheit" kind="data" color="0 255 255" initlabel="bg.ED_temp_fahrenheit">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_createAccVector" kind="command" color="20 200 200" initlabel="bg.ED_createAccVector">
+			<description>
+				<text>create an array of 3</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc_array">
+					<DefaultArg genus-name="variable_fake" label="AccData" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.vecsize" editable-label="no">
+					<DefaultArg genus-name="number" label="3" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_createMagVector" kind="command" color="200 20 200" initlabel="bg.ED_createMagVector">
+			<description>
+				<text>create an array of 3</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc_array">
+					<DefaultArg genus-name="variable_fake" label="MagData" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.vecsize" editable-label="no">
+					<DefaultArg genus-name="number" label="3" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_SD_READ" kind="data" color="200 100 0" initlabel="bg.ED_SD_READ">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_SD_WRITE" kind="data" color="255 100 200" initlabel="bg.ED_SD_WRITE">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="ED_filename" kind="data" color="255 100 200" initlabel="bg.ED_filename">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+
+		<BlockGenus name="ED_IR" kind="data" color="0 255 255" initlabel="bg.ED_IR">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<!-- 
+		<BlockGenus name="ED_acc_variable" kind="data" color="0 255 255" initlabel="bg.ED_acc_variable">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		-->
+		<BlockGenus name="EngduinoLEDs_setAll" kind="command" color="100 200 125" initlabel="bg.EngduinoLEDs_setAll">
+		    <description>
+				<text>Set all LEDs</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color">
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setAll_brightness" kind="command" color="100 200 125" initlabel="bg.EngduinoLEDs_setAll_brightness">
+		    <description>
+				<text>Set all LEDs brightness</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color">
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.brightness" >
+					<DefaultArg genus-name="number" label="15"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setAll_RGB" kind="command" color="100 200 125" initlabel="bg.EngduinoLEDs_setAll_RGB">
+		    <description>
+				<text>Set all LEDs RGB</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.R" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.G" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.B" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setLED" kind="command" color="255 10 10" initlabel="bg.EngduinoLEDs_setLED">
+			<description>
+				<text>Set LED</text>
+			</description>
+		    <BlockConnectors>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.LEDnum">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color" >
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setLED_brightness" kind="command" color="255 10 10" initlabel="bg.EngduinoLEDs_setLED_brightness">
+			<description>
+				<text>Set LED</text>
+			</description>
+		    <BlockConnectors>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.LEDnum">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.color" >
+					<DefaultArg genus-name="ED_blue" label="BLUE"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.brightness" >
+					<DefaultArg genus-name="number" label="15"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoLEDs_setLED_RGB" kind="command" color="255 10 10" initlabel="bg.EngduinoLEDs_setLED_RGB">
+			<description>
+				<text>Set LED</text>
+			</description>
+		    <BlockConnectors>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.LEDnum">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+		        <BlockConnector connector-type="number" connector-kind="socket" label="bc.R">
+					<DefaultArg genus-name="number" label="255" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.G" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.B" >
+					<DefaultArg genus-name="number" label="255"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>		
+		<BlockGenus name="EngduinoLight_lightlevel" kind="number_long" color="10 10 10" initlabel="bg.EngduinoLight_lightlevel">
+		    <description>
+				<text>Get light sensor level</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+			
+		</BlockGenus>
+		<BlockGenus name="EngduinoTemp_temperature" kind="number_double" color="200 10 255" initlabel="bg.EngduinoTemp_temperature">
+		    <description>
+				<text>Get Temperature</text>
+			</description>
+		    <BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.unit">
+					<DefaultArg genus-name="ED_temp_celsius" label="CELSIUS"/>
+				</BlockConnector>/
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_isPressed" kind="data" color="200 200 0" initlabel="bg.EngduinoButton_isPressed">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_wasPressed" kind="data" color="200 200 0" initlabel="bg.EngduinoButton_wasPressed">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_wasReleased" kind="data" color="200 200 0" initlabel="bg.EngduinoButton_wasReleased">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_waitUntilPressed" kind="command" color="200 200 0" initlabel="bg.EngduinoButton_wasPressed">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="EngduinoButton_waitUntilReleased" kind="command" color="200 200 0" initlabel="bg.EngduinoButton_WaitUntilReleased">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoButton_waitUntilReleased" kind="command" color="200 200 0" initlabel="bg.EngduinoButton_WaitUntilReleased">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_xyz" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_xyz">
+			<description>
+				<text>Get Accelerometer 3-axis data</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc"> 
+				    <!--  
+				    <DefaultArg genus-name="ED_createAccVector"/>
+				    -->
+				 </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_x" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_x">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Acc_X" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_y" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_y">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Acc_Y" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoAccelerometer_z" kind="command" color="20 200 200" initlabel="bg.EngduinoAccelerometer_z">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Acc_Z" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoMagnetometer_xyz" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_xyz">
+			<description>
+				<text>Get Magetometer 3-axis data</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc"> 
+				    <!--  
+				    <DefaultArg genus-name="ED_createAccVector"/>
+				    -->
+				 </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoMagnetometer_x" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_x">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Mag_X" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoMagnetometer_y" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_y">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Mag_Y" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoMagnetometer_z" kind="command" color="200 20 200" initlabel="bg.EngduinoMagnetometer_z">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="bc.accx">
+			    	<DefaultArg genus-name="variable_number_double" label="Mag_Z" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
 		
 		
-		<xi:include href="extra_SenseMe.xml"/>
+		<BlockGenus name="EngduinoSD_openFile" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_openFile">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="bc.filename">
+			    	<DefaultArg genus-name="ED_filename" label="logData.txt" />	
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="access">
+			    	<DefaultArg genus-name="ED_SD_READ" label="FILE_WRITE" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoSD_openFile_result" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_openfile_result">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="bc.filename">
+			    	<DefaultArg genus-name="ED_filename" label="logData.txt" />	
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="access">
+			    	<DefaultArg genus-name="ED_SD_READ" label="FILE_WRITE" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoSD_writeln_filename" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_writeln_filename">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="bc.filename">
+			    	<DefaultArg genus-name="ED_filename" label="logData.txt" />	
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="message">
+			    	<DefaultArg genus-name="ED_blue" label="Message or Data" />	
+			    </BlockConnector>
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
+					<DefaultArg genus-name="true" label="TRUE" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="EngduinoSD_writeln" kind="command" color="255 155 15" initlabel="bg.EngduinoSD_writeln">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="message">
+			    	<DefaultArg genus-name="ED_blue" label="Message or Data" />	
+			    </BlockConnector>
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.ln">
+					<DefaultArg genus-name="true" label="TRUE" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="EngduinoSD_available" kind="data" color="255 155 15" initlabel="bg.EngduinoSD_available">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoSD_read" kind="data" color="255 155 15" initlabel="bg.EngduinoSD_read">
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="EngduinoSD_isAttached" kind="data" color="255 155 15" initlabel="bg.EngduinoSD_isAttached">
+		    <BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoIR_send" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_send">
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="message">
+				<DefaultArg genus-name="ED_IR" label="IR_txBuf" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="EngduinoIR_recv" kind="command" color="158 74 144" initlabel="bg.EngduinoIR_recv">
+		    <BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="name">
+				<DefaultArg genus-name="ED_IR" label="IR_revBuf" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<!-- SenseMe Blocks -->
+				<BlockGenus name="SM_happy" kind="data" color="0 255 255" initlabel="bg.SM_happy">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
 
+		<BlockGenus name="SM_sad" kind="data" color="0 255 255" initlabel="bg.SM_sad">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_neutral" kind="data" color="0 255 255" initlabel="bg.SM_neutral">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_laugh" kind="data" color="0 255 255" initlabel="bg.SM_laugh">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SM_sleep" kind="data" color="0 255 255" initlabel="bg.SM_sleep">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_yawn" kind="data" color="0 255 255" initlabel="bg.ED_yawn">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<!-- blocks for rotation -->
+		<BlockGenus name="SM_0" kind="data" color="0 255 255" initlabel="bg.SM_0">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_90" kind="data" color="0 255 255" initlabel="bg.SM_90">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="SM_180" kind="data" color="0 255 255" initlabel="bg.SM_180">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>	
+		<BlockGenus name="SM_270" kind="data" color="0 255 255" initlabel="bg.SM_270">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>		
+			
+		<BlockGenus name="SenseMeAcc_xyz" kind="command" color="20 200 200" initlabel="bg.SenseMeAcc_xyz">
+			<description>
+				<text>Get Accelerometer 3-axis data</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc"> 
+				    <!--  
+				    <DefaultArg genus-name="ED_createAccVector"/>
+				    -->
+				 </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SenseMeAcc_x" kind="data" color="20 200 200" initlabel="bg.SenseMeAcc_x">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeAcc_y" kind="data" color="20 200 200" initlabel="bg.SenseMeAcc_y">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="plug" label="bc.accx">
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeAcc_z" kind="data" color="20 200 200" initlabel="bg.SenseMeAcc_z">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="plug" label="bc.accx">
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeMag_xyz" kind="command" color="20 200 200" initlabel="bg.SenseMeMag_xyz">
+			<description>
+				<text>Get Magnetometer 3-axis data</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.acc"> 
+				    <!--  
+				    <DefaultArg genus-name="ED_createAccVector"/>
+				    -->
+				 </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SenseMeMag_x" kind="data" color="20 200 200" initlabel="bg.SenseMeMag_x">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeMag_y" kind="data" color="20 200 200" initlabel="bg.SenseMeMag_y">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="plug">
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeMag_z" kind="data" color="20 200 200" initlabel="bg.SenseMeMag_z">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="plug">
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_setFace" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_setFace">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket">
+			    <DefaultArg genus-name="SM_happy" label="happy" />	
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_print" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_print">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="message">
+			    <DefaultArg genus-name="message" label="message"/>
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_drawPixel" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_drawPixel">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="x">
+			    <DefaultArg genus-name="number" label="0" />
+			    </BlockConnector>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="y">
+			    <DefaultArg genus-name="number" label="0" />
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_rotate" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_rotate">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="mode">
+			    <DefaultArg genus-name="SM_0" label="0" />
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_clear" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_clear">
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_scrollText" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_scrollText">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="message">
+			    <DefaultArg genus-name="message" label="message"/>
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		
+		<BlockGenus name="SM_00" kind="data" color="0 255 255" initlabel="bg.SM_00" editable-label="yes">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug" label="00000000" >
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SM_name" kind="data" color="15 255 15" initlabel="bg.SM_00" editable-label="yes">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug" label="00000000" >
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLEDM_defineBmp" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_defineBmp">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="name">
+			    	<DefaultArg genus-name="SM_name" label="funnyBitmap"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 0">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 1">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 2">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 3">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 4">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 5">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 6">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="row 7">
+			    	<DefaultArg genus-name="SM_00" label="00000000"/>
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		
+		<BlockGenus name="SM_Red" kind="data" color="0 255 255" initlabel="bg.SM_Red">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_Green" kind="data" color="0 255 255" initlabel="bg.SM_Green">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_Blue" kind="data" color="0 255 255" initlabel="bg.SM_Blue">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_Magenta" kind="data" color="0 255 255" initlabel="bg.SM_Magenta">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_Yellow" kind="data" color="0 255 255" initlabel="bg.SM_Yellow">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_Cyan" kind="data" color="0 255 255" initlabel="bg.SM_Cyan">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_White" kind="data" color="0 255 255" initlabel="bg.White">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SM_Off" kind="data" color="0 255 255" initlabel="bg.Off">
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="plug">
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SenseMePixel_setColor" kind="command" color="20 200 200" initlabel="bg.SenseMePixel_setColor">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="colour">
+			    <DefaultArg genus-name="SM_Red" label="RED"/>
+			    </BlockConnector>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="brightness">
+			    <DefaultArg genus-name="number" label="255" />
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SenseMeLEDM_displayBMP" kind="command" color="20 200 200" initlabel="bg.SenseMeLEDM_displayBMP">
+			<BlockConnectors>
+			    <BlockConnector connector-type="string" connector-kind="socket" label="var_name">
+			    <DefaultArg genus-name="SM_name" label="funnyBitmap"/>
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="SenseMePixel_setRGB" kind="command" color="20 200 200" initlabel="bg.SenseMePixel_setRGB">
+			<BlockConnectors>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="R (0-255)">
+			    <DefaultArg genus-name="number" label="255" />
+			    </BlockConnector>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="G (0-255)">
+			    <DefaultArg genus-name="number" label="255" />
+			    </BlockConnector>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="B (0-255)">
+			    <DefaultArg genus-name="number" label="255" />
+			    </BlockConnector>
+			    <BlockConnector connector-type="number" connector-kind="socket" label="brightness">
+			    <DefaultArg genus-name="number" label="255" />
+			    </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLight_lightlevel" kind="data" color="20 200 200" initlabel="bg.SenseMeLight_lightlevel">
+		    <description>
+				<text>Get light sensor level</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLight_temperature" kind="data" color="20 200 200" initlabel="bg.SenseMeLight_temperature">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		<BlockGenus name="SenseMeLight_humidity" kind="data" color="20 200 200" initlabel="SenseMeLight_humidity">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+			</BlockConnectors>
+		</BlockGenus>
+		
+		
+	<!-- This end BLock Genuses -->	
 	</BlockGenuses>
 	
 	
@@ -8891,20 +9635,49 @@
 			<FamilyMember>ED_SD_READ</FamilyMember>
 			<FamilyMember>ED_SD_WRITE</FamilyMember>
 		</BlockFamily>
+		
+		<BlockFamily>
+		<FamilyMember>SM_happy</FamilyMember>
+		<FamilyMember>SM_sad</FamilyMember>
+		<FamilyMember>SM_neutral</FamilyMember>
+		<FamilyMember>SM_laugh</FamilyMember>
+		<FamilyMember>SM_sleep</FamilyMember>
+		<FamilyMember>SM_yawn</FamilyMember>
+		</BlockFamily>
 
-
+		<BlockFamily>
+		<FamilyMember>SM_0</FamilyMember>
+		<FamilyMember>SM_90</FamilyMember>
+		<FamilyMember>SM_180</FamilyMember>
+		<FamilyMember>SM_270</FamilyMember>
+		</BlockFamily>
+		
+		<BlockFamily>
+		<FamilyMember>SM_Red</FamilyMember>
+		<FamilyMember>SM_Green</FamilyMember>
+		<FamilyMember>SM_Blue</FamilyMember>
+		<FamilyMember>SM_Magenta</FamilyMember>
+		<FamilyMember>SM_Yellow</FamilyMember>
+		<FamilyMember>SM_Cyan</FamilyMember>
+		<FamilyMember>SM_White</FamilyMember>
+		<FamilyMember>SM_Off</FamilyMember>
+		</BlockFamily>
+		
 	</BlockFamilies>
 
 	<BlockDrawerSets>
-		<BlockDrawerSet name="factory" type="stack" location="southwest" window-per-drawer="no" drawer-draggable="no">
-			<BlockDrawer name="bd.arduino" type="factory" is-open="yes" button-color="255 255 0">
+		<BlockDrawerSet name="factory" type="stack" location="southwest" window-per-drawer="yes" drawer-draggable="no">
+			<BlockDrawer name="bd.arduino" type="factory" is-open="yes" button-color="251 124 27">
 				<BlockGenusMember>loop</BlockGenusMember>
 				<BlockGenusMember>program</BlockGenusMember>
+				<BlockGenusMember>header</BlockGenusMember>
 				<BlockGenusMember>code_head</BlockGenusMember>
 				<BlockGenusMember>code_setup</BlockGenusMember>
 				<BlockGenusMember>code_loop</BlockGenusMember>
+				<BlockGenusMember>subroutine</BlockGenusMember>
+				<BlockGenusMember>subroutine-ref</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer name="bd.control" type="factory" is-open="yes" button-color="255 255 0">	
+			<BlockDrawer name="bd.control" type="factory" is-open="yes" button-color="249 93 156">	
 				<BlockGenusMember>delay</BlockGenusMember>
 				<BlockGenusMember>delay_microseconds</BlockGenusMember>
 				<BlockGenusMember>millis</BlockGenusMember>
@@ -8916,9 +9689,8 @@
 				<BlockGenusMember>repeat</BlockGenusMember>
 				<BlockGenusMember>repeat_control</BlockGenusMember>
 				<BlockGenusMember>break</BlockGenusMember>
-				<BlockGenusMember>subroutine</BlockGenusMember>
-				<BlockGenusMember>subroutine-ref</BlockGenusMember>
 			</BlockDrawer>
+			<!--  
 			<BlockDrawer button-color="29 152 155" name="bd.pins" type="factory">
 				<BlockGenusMember>pin-read-digital</BlockGenusMember>
 				<BlockGenusMember>pin-read-analog</BlockGenusMember>
@@ -8936,7 +9708,8 @@
 				<BlockGenusMember>PORTA</BlockGenusMember>
 				<BlockGenusMember>PINA</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer button-color="255 163 82" name="bd.logic" type="factory">
+			-->
+			<BlockDrawer button-color="255 193 206" name="bd.logic" type="factory">
 				<BlockGenusMember>greater</BlockGenusMember>
 				<BlockGenusMember>less</BlockGenusMember>
 				<BlockGenusMember>equal</BlockGenusMember>
@@ -8956,7 +9729,7 @@
 				<BlockGenusMember>string_empty</BlockGenusMember>
 				<BlockGenusMember>string_toInt</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer button-color="114 147 71" name="bd.operators" type="factory">
+			<BlockDrawer button-color="77 173 189" name="bd.operators" type="factory">
 				<BlockGenusMember>addition</BlockGenusMember>
 				<BlockGenusMember>subtraction</BlockGenusMember>
 				<BlockGenusMember>multiplication</BlockGenusMember>
@@ -8971,7 +9744,7 @@
 				<BlockGenusMember>random_range</BlockGenusMember>
 				<BlockGenusMember>map</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer button-color="232 156 149" name="bd.number" type="factory">
+			<BlockDrawer button-color="221 206 187" name="bd.number" type="factory">
 				<BlockGenusMember>number</BlockGenusMember>
 				<BlockGenusMember>setter_variable_number_unsigned_long</BlockGenusMember>
 				<BlockGenusMember>variable_number_unsigned_long</BlockGenusMember>
@@ -8998,6 +9771,7 @@
 				<BlockGenusMember>setter_variable_bool</BlockGenusMember>
 				<BlockGenusMember>variable_poly</BlockGenusMember>
 			</BlockDrawer>
+			<!--
 			<BlockDrawer button-color="205 133 63" name="bd.utilities" type="factory">
 				<BlockGenusMember>servo_default</BlockGenusMember>
 				<BlockGenusMember>ultrasonic</BlockGenusMember>
@@ -9007,12 +9781,15 @@
 				<BlockGenusMember>number-single-I2C-address</BlockGenusMember>
 				<BlockGenusMember>number-single-fixed-parallel</BlockGenusMember>
 			</BlockDrawer>
+			-->
 			<BlockDrawer button-color="255 255 255" name="bd.communication" type="factory">
 				<BlockGenusMember>serial_read</BlockGenusMember>
 				<BlockGenusMember>serial_print</BlockGenusMember>
+				
 				<BlockGenusMember>glue_sn</BlockGenusMember>
 				<BlockGenusMember>glue_sb</BlockGenusMember>
 				<BlockGenusMember>glue_poly</BlockGenusMember>
+				<!-- 
 				<BlockGenusMember>ir_setport</BlockGenusMember>
 				<BlockGenusMember>ir_getcode</BlockGenusMember>
 				<BlockGenusMember>wire_write</BlockGenusMember>
@@ -9024,7 +9801,9 @@
 				<BlockGenusMember>DuinoEDU_Guino_pause</BlockGenusMember>
 				<BlockGenusMember>DuinoEDU_Guino_Title</BlockGenusMember>
 				<BlockGenusMember>DuinoEDU_Guino_column</BlockGenusMember>
+				-->
 			</BlockDrawer>
+			<!-- 
 			<BlockDrawer button-color="26 97 218" name="bd.scoop">
 			    <BlockGenusMember>scoop_task</BlockGenusMember>
 				<BlockGenusMember>scoop_loop</BlockGenusMember>
@@ -9036,6 +9815,8 @@
 				<BlockGenusMember>scoop_event_rising</BlockGenusMember>
 				<BlockGenusMember>scoop_event_change</BlockGenusMember>
 			</BlockDrawer>
+			 -->
+			<!--  
 			<BlockDrawer button-color="0 50 45" name="bd.storage" type="factory">
 				<BlockGenusMember>eeprom_read_int</BlockGenusMember>
 				<BlockGenusMember>eeprom_write_int</BlockGenusMember>
@@ -9044,16 +9825,16 @@
 				<BlockGenusMember>eeprom_read</BlockGenusMember>
 				<BlockGenusMember>eeprom_write</BlockGenusMember>
 				<BlockGenusMember>sd_write2</BlockGenusMember>
-				<!-- <BlockGenusMember>sd_write</BlockGenusMember> -->
-				<!-- <BlockGenusMember>sd_write_number</BlockGenusMember> -->
-				<!-- <BlockGenusMember>sd_write_number_int</BlockGenusMember> -->
 			</BlockDrawer>
+			-->
+			<!--  
 			<BlockDrawer button-color="169 148 212" name="bd.network" type="factory">
 				<BlockGenusMember>bleshield</BlockGenusMember>
 				<BlockGenusMember>bleshield_available</BlockGenusMember>
 				<BlockGenusMember>bleshield_read_poly</BlockGenusMember>
 				<BlockGenusMember>bleshield_compare</BlockGenusMember>
 			</BlockDrawer>
+			-->
 			<!-- 
 			<BlockDrawer button-color="120 120 120" name="bd.especial" type="factory">
 				<BlockGenusMember>code_head</BlockGenusMember>
@@ -9182,233 +9963,54 @@
 				<BlockGenusMember>seeed_joystick_button</BlockGenusMember>
 			</BlockDrawer>
 			-->
-			<!--  BlockDrawer button-color="20 206 20" name="bd.DuinoEDU">
-				<BlockGenusMember>DuinoEDU_Led</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_infrared</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_temp</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_humiPro</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Ultrasonic</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Led_Bar</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_LCD_I2C_RGB</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_LCD_I2C_Backlight</BlockGenusMember>	
-				<BlockGenusMember>DuinoEDU_LCD_I2C_RGB_Clear</BlockGenusMember>	
-				<BlockGenusMember>DuinoEDU_Oled_I2C</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Oled_Clear</BlockGenusMember>	
-				<BlockGenusMember>DuinoEDU_Keypad_12_Button</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Keypad_Post</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Keypad_Pwd</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Digital_Tube</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Digital_Tube_Ecrire</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Display_Digital_Tube</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Digital_Clear</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Mouse_Xmove</BlockGenusMember>
-				<BlockGenusMember>keyboard_post</BlockGenusMember>
-				<BlockGenusMember>keyboard_compare</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Driver_I2C_Forward</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Driver_I2C_Stop</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Driver_I2C_Speed_A_Motor</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_shildbot_Forward</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_shildbot_Stop</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_shildbot_Speed_Motor</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_shildbot_Read</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Aix_Acc_mesurerX</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Partie_Emetteur</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Partie_Recepteur</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Rfid_Write</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Rfid_Test</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Rfid_Read</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Rfid_Clear</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_neopixel_init</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_neopixel_pixel_colorRGB</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_neopixel_show</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_neopixel_Brightness</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_neopixel_Clear</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_stepper_step</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_stepper_setSpeed</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_matrice_write</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_matrice_Brightness</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_matrice_clear</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Servo_Plus</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Nunchuck_BoutonC</BlockGenusMember>
-				<BlockGenusMember>DuinoEDU_Barometer_Pression</BlockGenusMember>		
-			</BlockDrawer -->
-			<!-- BlockDrawer button-color="216 5 10" name="bd.adafruit" type="factory">
-				<BlockGenusMember>ada_dc_motor_fwd</BlockGenusMember>
-				<BlockGenusMember>ada_dc_motor_bwd</BlockGenusMember>
-				<BlockGenusMember>ada_dc_motor_release</BlockGenusMember>
-				<BlockGenusMember>ada_neopixel_init</BlockGenusMember>	
-				<BlockGenusMember>ada_neopixel_pixel_colorRGB</BlockGenusMember>
-				<BlockGenusMember>ada_neopixel_show</BlockGenusMember>	
-				<BlockGenusMember>ada_neopixel_Brightness</BlockGenusMember>
-			</BlockDrawer>
-			<BlockDrawer button-color="0 177 236" name="bd.makeblock" type="factory">
-				<BlockGenusMember>me_ultrasonic_sensor</BlockGenusMember>
-				<BlockGenusMember>me_linefinder</BlockGenusMember>
-				<BlockGenusMember>me_limitswitch</BlockGenusMember>
-				<BlockGenusMember>me_shutter</BlockGenusMember>
-				<BlockGenusMember>me_motordriver</BlockGenusMember>
-				<BlockGenusMember>me_servodriver</BlockGenusMember>
-				<BlockGenusMember>me_stepper_motor</BlockGenusMember>
-				<BlockGenusMember>me_infraredreceiver</BlockGenusMember>
-				<BlockGenusMember>me_bluetooth_read</BlockGenusMember>
-				<BlockGenusMember>me_bluetooth_write</BlockGenusMember>
-				<BlockGenusMember>me_bluetooth_commands</BlockGenusMember>
-				<BlockGenusMember>me_bluetooth_command</BlockGenusMember>
-				<BlockGenusMember>me_port_1</BlockGenusMember>
-				<BlockGenusMember>me_motor_1</BlockGenusMember>
-				<BlockGenusMember>me_shutter_1</BlockGenusMember>
-			</BlockDrawer-->
+
+
+
+
+			
+			<!-- SenseMe -->
+			<BlockDrawer button-color="146 200 77" name="bd.SenseMe_Motion">
 			<!-- 
-			<BlockDrawer button-color="225 116 116" name="bd.workshop" type="factory">
-			    <BlockGenusMember>ws_setting</BlockGenusMember>
-			    <BlockGenusMember>ws_go_forward</BlockGenusMember>
-				<BlockGenusMember>ws_go_backward</BlockGenusMember>
-				<BlockGenusMember>ws_stop</BlockGenusMember>
-				<BlockGenusMember>ws_turn_left</BlockGenusMember>
-				<BlockGenusMember>ws_turn_right</BlockGenusMember>
-				<BlockGenusMember>ws_go_forward_left</BlockGenusMember>
-				<BlockGenusMember>ws_go_forward_right</BlockGenusMember>
-				<BlockGenusMember>ws_go_backward_left</BlockGenusMember>
-				<BlockGenusMember>ws_go_backward_right</BlockGenusMember>
-				<BlockGenusMember>ws_light</BlockGenusMember>
-				<BlockGenusMember>ws_scan</BlockGenusMember>
-				<BlockGenusMember>ws_music</BlockGenusMember>
-				<BlockGenusMember>ws_wireless</BlockGenusMember>
-				<BlockGenusMember>ws_danger</BlockGenusMember>
-				<BlockGenusMember>ws_binoculars</BlockGenusMember>
-			</BlockDrawer>
-			 -->
-			<!-- BlockDrawer button-color="64 109 0" name="bd.insectbot">
-			    <BlockGenusMember>insectbot_get_distance</BlockGenusMember>
-			    <BlockGenusMember>insectbot_is_indanger</BlockGenusMember>
-			    <BlockGenusMember>insectbot_go_forward</BlockGenusMember>
-			    <BlockGenusMember>insectbot_go_backright</BlockGenusMember>
-			    <BlockGenusMember>insectbot_turn_left</BlockGenusMember>
-			    <BlockGenusMember>insectbot_blink_led</BlockGenusMember>
-			</BlockDrawer -->
-			<!-- iDrawing -->
-			<!-- BlockDrawer button-color="255 102 0" name="bd.iDrawing">
-			    <BlockGenusMember>iDrawing_set_para</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_run</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_rule_start</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_rule_stop</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_rule_sleep</BlockGenusMember>
-			    
-			    <BlockGenusMember>iDrawing_trigger_time</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_trigger_dpin</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_trigger_apin</BlockGenusMember>
-			    
-			    <BlockGenusMember>iDrawing_actuator_led</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_actuator_playermini</BlockGenusMember>
-			    <BlockGenusMember>iDrawing_actuator_dpin</BlockGenusMember>
-			    
-			    <BlockGenusMember>port_pin_name</BlockGenusMember>
-			    <BlockGenusMember>led_mode_flash</BlockGenusMember>
-			    <BlockGenusMember>led_mode_fade</BlockGenusMember>
-			    <BlockGenusMember>player_mode_random</BlockGenusMember>
-			    <BlockGenusMember>player_mode_single</BlockGenusMember>
-			    <BlockGenusMember>output_mode_high</BlockGenusMember>
-			    <BlockGenusMember>output_mode_low</BlockGenusMember>
-			    <BlockGenusMember>output_mode_highpulse</BlockGenusMember>
-			    <BlockGenusMember>output_mode_lowpulse</BlockGenusMember>
-			    <BlockGenusMember>trigger_equal</BlockGenusMember>
-			    <BlockGenusMember>trigger_greater</BlockGenusMember>
-			    <BlockGenusMember>trigger_less</BlockGenusMember>		    
-			</BlockDrawer -->
-			<!-- littlebits -->
-			<!-- BlockDrawer button-color="93 13 125" name="bd.littlebits">
-			    <BlockGenusMember>little_bits_bendsensor</BlockGenusMember>
-			    <BlockGenusMember>little_bits_button</BlockGenusMember>
-			    <BlockGenusMember>little_bits_dimmer</BlockGenusMember>
-			    <BlockGenusMember>little_bits_lightsensor</BlockGenusMember>
-			    <BlockGenusMember>little_bits_lighttrigger</BlockGenusMember>
-			    <BlockGenusMember>little_bits_microphone</BlockGenusMember>
-			    <BlockGenusMember>little_bits_motiontrigger</BlockGenusMember>
-			    <BlockGenusMember>little_bits_pressuresensor</BlockGenusMember>
-			    <BlockGenusMember>little_bits_pulse</BlockGenusMember>
-			    <BlockGenusMember>little_bits_remotetrigger</BlockGenusMember>
-			    <BlockGenusMember>little_bits_rollerswitch</BlockGenusMember>
-			    <BlockGenusMember>little_bits_slidedimmer</BlockGenusMember>
-			    <BlockGenusMember>little_bits_slideswitch</BlockGenusMember>
-			    <BlockGenusMember>little_bits_soundtrigger</BlockGenusMember>
-			    <BlockGenusMember>little_bits_timeout</BlockGenusMember>
-			    <BlockGenusMember>little_bits_toggleswitch</BlockGenusMember>
-			    <BlockGenusMember>little_bits_mix</BlockGenusMember>
-			    <BlockGenusMember>little_bits_oscillator</BlockGenusMember>
-			    <BlockGenusMember>little_bits_random</BlockGenusMember>
-			    <BlockGenusMember>little_bits_bargraph</BlockGenusMember>
-			    <BlockGenusMember>little_bits_brightled</BlockGenusMember>
-			    <BlockGenusMember>little_bits_dcmotor</BlockGenusMember>
-			    <BlockGenusMember>little_bits_fan</BlockGenusMember>
-			    <BlockGenusMember>little_bits_ir_led</BlockGenusMember>
-			    <BlockGenusMember>little_bits_led</BlockGenusMember>
-			    <BlockGenusMember>little_bits_lightwire</BlockGenusMember>
-			    <BlockGenusMember>little_bits_longled</BlockGenusMember>
-			    <BlockGenusMember>little_bits_number</BlockGenusMember>
-			    <BlockGenusMember>little_bits_rgbled</BlockGenusMember>
-			    <BlockGenusMember>little_bits_uvled</BlockGenusMember>
-			    <BlockGenusMember>little_bits_vibration_motor</BlockGenusMember>
-			    <BlockGenusMember>little_bits_synthspeaker</BlockGenusMember>
-			</BlockDrawer -->
-			<!-- engduino -->
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino">
-			    <BlockGenusMember>EngduinoLEDs_setLED</BlockGenusMember>
-			    <BlockGenusMember>EngduinoLEDs_setLED_brightness</BlockGenusMember>
-			    <BlockGenusMember>EngduinoLEDs_setLED_RGB</BlockGenusMember>
-			    <BlockGenusMember>EngduinoLEDs_setAll</BlockGenusMember>
-			    <BlockGenusMember>EngduinoLEDs_setAll_brightness</BlockGenusMember>
-			    <BlockGenusMember>EngduinoLEDs_setAll_RGB</BlockGenusMember>
-			</BlockDrawer>
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Sensors">
-			    <BlockGenusMember>EngduinoLight_lightlevel</BlockGenusMember>
-			    <BlockGenusMember>EngduinoTemp_temperature</BlockGenusMember>
-			</BlockDrawer>
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Button">
-			    <BlockGenusMember>EngduinoButton_isPressed</BlockGenusMember>
-			    <BlockGenusMember>EngduinoButton_wasPressed</BlockGenusMember>
-			    <BlockGenusMember>EngduinoButton_wasReleased</BlockGenusMember>
-			    <BlockGenusMember>EngduinoButton_waitUntilPressed</BlockGenusMember>
-			    <BlockGenusMember>EngduinoButton_waitUntilReleased</BlockGenusMember>
-			    
-			</BlockDrawer>
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Acc">
-			    <BlockGenusMember>ED_createAccVector</BlockGenusMember>
-			    <BlockGenusMember>EngduinoAccelerometer_xyz</BlockGenusMember>
-			    <BlockGenusMember>EngduinoAccelerometer_x</BlockGenusMember>
-			    <BlockGenusMember>EngduinoAccelerometer_y</BlockGenusMember>
-			    <BlockGenusMember>EngduinoAccelerometer_z</BlockGenusMember>
-			</BlockDrawer>
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino_Mag">
-			    <BlockGenusMember>ED_createMagVector</BlockGenusMember>
-			    <BlockGenusMember>EngduinoMagnetometer_xyz</BlockGenusMember>
-			    <BlockGenusMember>EngduinoMagnetometer_x</BlockGenusMember>
-			    <BlockGenusMember>EngduinoMagnetometer_y</BlockGenusMember>
-			    <BlockGenusMember>EngduinoMagnetometer_z</BlockGenusMember>
-			</BlockDrawer>
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino_SD">
-			    <BlockGenusMember>EngduinoSD_openFile</BlockGenusMember>
-			    <BlockGenusMember>EngduinoSD_openFile_result</BlockGenusMember>
-			    <BlockGenusMember>EngduinoSD_writeln_filename</BlockGenusMember>
-			    <BlockGenusMember>EngduinoSD_writeln</BlockGenusMember>
-			    <BlockGenusMember>EngduinoSD_available</BlockGenusMember>
-			    <BlockGenusMember>EngduinoSD_read</BlockGenusMember>
-			    <BlockGenusMember>EngduinoSD_isAttached</BlockGenusMember>
-			 </BlockDrawer>
-			<BlockDrawer button-color="128 182 6" name="bd.Engduino_IR">
-			    <BlockGenusMember>EngduinoIR_send</BlockGenusMember>
-			    <BlockGenusMember>EngduinoIR_recv</BlockGenusMember>
-			</BlockDrawer>
-			
-			
-			<!--  
-			<BlockDrawer button-color="182 128 6" name="bd.SenseMe_Acc">
 			    <BlockGenusMember>ED_createAccVector</BlockGenusMember>
 			    <BlockGenusMember>SenseMeAcc_xyz</BlockGenusMember>
+			 -->
 			    <BlockGenusMember>SenseMeAcc_x</BlockGenusMember>
 			    <BlockGenusMember>SenseMeAcc_y</BlockGenusMember>
 			    <BlockGenusMember>SenseMeAcc_z</BlockGenusMember>
-			</BlockDrawer>
+			<!--  
+			    <BlockGenusMember>SenseMeMag_xyz</BlockGenusMember>
 			-->
+			    <BlockGenusMember>SenseMeMag_x</BlockGenusMember>
+			    <BlockGenusMember>SenseMeMag_y</BlockGenusMember>
+			    <BlockGenusMember>SenseMeMag_z</BlockGenusMember>
+			</BlockDrawer>
+			
+			<BlockDrawer button-color="146 200 77" name="bd.SenseMe_LEDM">
+			    <BlockGenusMember>SenseMeLEDM_setFace</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_print</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_defineBmp</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_displayBMP</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_drawPixel</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_rotate</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_clear</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLEDM_scrollText</BlockGenusMember>
+			    
+			</BlockDrawer>
+			
+			<BlockDrawer button-color="146 200 77" name="bd.SenseMe_Pixel">
+			    <BlockGenusMember>SenseMePixel_setColor</BlockGenusMember>
+			    <BlockGenusMember>SenseMePixel_setRGB</BlockGenusMember>
+			</BlockDrawer>
+			
+			<BlockDrawer button-color="146 200 77" name="bd.SenseMe_Ambient">
+			    <BlockGenusMember>SenseMeLight_lightlevel</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLight_temperature</BlockGenusMember>
+			    <BlockGenusMember>SenseMeLight_humidity</BlockGenusMember>
+			</BlockDrawer>
+			
+			<BlockDrawer button-color="146 200 77" name="bd.SenseMe_Pet">
+
+			</BlockDrawer>
 			
 			<!-- keenlon -->
 			<!-- 		

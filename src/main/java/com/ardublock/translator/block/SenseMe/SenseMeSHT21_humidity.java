@@ -1,13 +1,13 @@
-package com.ardublock.translator.block.Engduino;
+package com.ardublock.translator.block.SenseMe;
 
 import com.ardublock.translator.Translator;
 import com.ardublock.translator.block.TranslatorBlock;
 import com.ardublock.translator.block.exception.SocketNullException;
 import com.ardublock.translator.block.exception.SubroutineNotDeclaredException;
 
-public class EngduinoAccelerometer_x extends TranslatorBlock {
+public class SenseMeSHT21_humidity extends TranslatorBlock {
 
-	public EngduinoAccelerometer_x (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
+	public SenseMeSHT21_humidity (Long blockId, Translator translator, String codePrefix, String codeSuffix, String label)
 	{
 		super(blockId, translator, codePrefix, codeSuffix, label);
 	}
@@ -17,11 +17,10 @@ public class EngduinoAccelerometer_x extends TranslatorBlock {
 		{
 			String ret="";
 			
-			translator.addHeaderFile("EngduinoAccelerometer.h");
+			translator.addHeaderFile("SHT2x.h");
 			translator.addHeaderFile("Wire.h");
-			translator.addSetupCommand("EngduinoAccelerometer"+".begin();\n");
-			
-			ret += "\tEngduinoAccelerometer.getX();\n";
+			//translator.addSetupCommand("SHT2x"+".begin();\n");
+			ret = ret + "SHT2x.GetHumidity()";
 			return ret;
 		}
 }

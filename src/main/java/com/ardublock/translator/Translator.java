@@ -25,7 +25,8 @@ import edu.mit.blocks.workspace.Workspace;
 
 public class Translator
 {
-	private static final String variablePrefix = "_ABVAR_";
+	//private static final String variablePrefix = "_ABVAR_";
+	private static final String variablePrefix = "";
 
 	private Set<String> headerFileSet;
 	private Set<String> definitionSet;
@@ -286,7 +287,8 @@ public class Translator
 	{
 		variableCnt = variableCnt + 1;
 		//String varName = variablePrefix + variableCnt + "_";
-		String varName = "_";	//vshum
+		//String varName = "_";	//vshum
+		String varName = "";
 		int i;
 		for (i=0; i<reference.length(); ++i)
 		{
@@ -378,6 +380,7 @@ public class Translator
 				{
 					loopBlockSet.add(renderableBlock);
 				}
+				
 			}
 		}
 		
@@ -401,12 +404,39 @@ public class Translator
 					this.addFunctionName(block.getBlockID(), functionName);
 					subroutineBlockSet.add(renderableBlock);
 				}
+		
 				
 			}
 		}
 		
 		return subroutineBlockSet;
 	}
+	
+	/* vshum */
+	public Set<RenderableBlock> findHeaderBlocks() throws SubroutineNameDuplicatedException
+	{
+		Set<RenderableBlock> headerBlockSet = new HashSet<RenderableBlock>();
+		Iterable<RenderableBlock> renderableBlocks = workspace.getRenderableBlocks();
+		
+		for (RenderableBlock renderableBlock:renderableBlocks)
+		{
+			Block block = renderableBlock.getBlock();
+			
+			if (!block.hasPlug() && (Block.NULL.equals(block.getBeforeBlockID())))
+			{
+				if (block.getGenusName().equals("header"))
+				{
+					String functionName = block.getBlockLabel().trim();
+					this.addFunctionName(block.getBlockID(), functionName);
+					headerBlockSet.add(renderableBlock);
+				}
+				
+			}
+		}
+		
+		return headerBlockSet;
+	}
+	
 	
 	public String translate(Set<RenderableBlock> loopBlocks, Set<RenderableBlock> subroutineBlocks) throws SocketNullException, SubroutineNotDeclaredException
 	{
@@ -423,11 +453,22 @@ public class Translator
 			Block subroutineBlock = renderableBlock.getBlock();
 			code.append(translate(subroutineBlock.getBlockID()));
 		}
+
+		/* vshum 
+		for (RenderableBlock renderableBlock : headerBlocks)
+		{
+			Block headerBlock = renderableBlock.getBlock();
+			code.append(translate(headerBlock.getBlockID()));
+		}
+		*/
+		
 		beforeGenerateHeader();
 		code.insert(0, genreateHeaderCommand());
 		
 		return code.toString();
 	}
+	
+	
 	
 	public Object getInternalData(String name)
 	{

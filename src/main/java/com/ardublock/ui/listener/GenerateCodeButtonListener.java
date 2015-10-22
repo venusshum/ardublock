@@ -49,6 +49,7 @@ public class GenerateCodeButtonListener implements ActionListener
 		Set<RenderableBlock> subroutineBlockSet = new HashSet<RenderableBlock>();
 		Set<RenderableBlock> scoopBlockSet = new HashSet<RenderableBlock>();
 		Set<RenderableBlock> guinoBlockSet = new HashSet<RenderableBlock>();
+		Set<RenderableBlock> headerBlockSet = new HashSet<RenderableBlock>(); //vshum
 		StringBuilder code = new StringBuilder();
 		
 		
@@ -94,6 +95,11 @@ public class GenerateCodeButtonListener implements ActionListener
 				if(block.getGenusName().equals("setup"))
 				{
 					loopBlockSet.add(renderableBlock);
+				}
+				/*vshum*/
+				if(block.getGenusName().equals("header"))
+				{
+					headerBlockSet.add(renderableBlock);
 				}
 				if (block.getGenusName().equals("subroutine"))
 				{
@@ -171,6 +177,14 @@ public class GenerateCodeButtonListener implements ActionListener
 				translator.setRootBlockName("subroutine");
 				Block subroutineBlock = renderableBlock.getBlock();
 				code.append(translator.translate(subroutineBlock.getBlockID()));
+			}
+			
+			/*vshum */
+			for (RenderableBlock renderableBlock : headerBlockSet)
+			{
+				translator.setRootBlockName("header");
+				Block headerBlock = renderableBlock.getBlock();
+				code.append(translator.translate(headerBlock.getBlockID()));
 			}
 			
 			translator.beforeGenerateHeader();
